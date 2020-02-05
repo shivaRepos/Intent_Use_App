@@ -48,9 +48,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v == call) {
-            Intent intent = new Intent(Intent.ACTION_CALL);
-            intent.setData(Uri.parse("tel:" + "8765375407"));
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+           // Intent intent = new Intent(Intent.ACTION_CALL);
+            Intent intent = new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse("tel:" + "123456879"));
+            /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                     // TODO: Consider calling
                     //    Activity#requestPermissions
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     // for Activity#requestPermissions for more details.
                     return;
                 }
-            }
+            }*/
             startActivity(intent);
             }
         if(v == image){
