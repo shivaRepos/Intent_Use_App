@@ -1,10 +1,12 @@
 package com.giri.test1;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,7 +16,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    Button image, call, sms, email, camera, map;
+    Button image, call, sms, email, camera, map,video;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,15 +46,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         map = findViewById(R.id.map);
         map.setOnClickListener(this);
 
+        video = findViewById(R.id.video);
+        video.setOnClickListener(this);
+
     }
 
     @Override
     public void onClick(View v) {
         if (v == call) {
-           // Intent intent = new Intent(Intent.ACTION_CALL);
-            Intent intent = new Intent(Intent.ACTION_DIAL);
+            Intent intent = new Intent(MainActivity.this,CallActivity.class);
+        /*    Intent intent = new Intent(Intent.ACTION_DIAL);
             intent.setData(Uri.parse("tel:" + "123456879"));
-            /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            *//*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                     // TODO: Consider calling
                     //    Activity#requestPermissions
@@ -94,14 +100,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
         if(v == camera){
+            /*
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(intent,1);
+            finish();*/
+            Intent intent = new Intent(MainActivity.this,ImageViewActivity.class);
             startActivity(intent);
-            finish();
+
         }
+
+        if(v == video){
+
+        Intent intent = new Intent();
+        intent.setType("video/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent,2);
+
+        }
+
         if(v == map){
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData((Uri.parse("google.navigation:q=LKO")));
+            Intent intent = new Intent(MainActivity.this,MapActivity.class);
+            startActivity(intent);
         }
     }
+/*
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode==RESULT_OK)
+        {
+            if(requestCode==1)
+            {
+                if(data!=null)
+                {
 
+                    }
+
+                }
+            }
+
+    }*/
 }

@@ -17,7 +17,11 @@
         android:roundIcon="@drawable/appicon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".EmailActivity"></activity>
+        <activity android:name=".VideoActivity"></activity>
+        <activity android:name=".CallActivity" />
+        <activity android:name=".MapActivity" />
+        <activity android:name=".ImageViewActivity" />
+        <activity android:name=".EmailActivity" />
         <activity android:name=".SmsActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
