@@ -76,7 +76,7 @@ public class SplashActivity extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        Intent intent = new Intent(SplashActivity.this,MainActivity.class);
+                        Intent intent = new Intent(SplashActivity.this,AuthActivity.class);
                         startActivity(intent);
                         finish();
                     }
@@ -112,7 +112,7 @@ public class SplashActivity extends AppCompatActivity {
 
                     if (count == grantResults.length)
                     {
-                        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                        Intent intent = new Intent(SplashActivity.this, AuthActivity.class);
                         startActivity(intent);
                         finish();
                     }

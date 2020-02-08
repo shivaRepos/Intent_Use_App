@@ -60,13 +60,14 @@ public class VideoActivity extends AppCompatActivity implements View.OnClickList
         });
 
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_arrow_back));
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
-        toolbar.setTitle("whatsapp");
+        toolbar.setTitle("Gallery");
         toolbar.setTitleTextColor(getResources().getColor(R.color.white));
         Intent intent = new Intent();
         intent.setType("video/*");

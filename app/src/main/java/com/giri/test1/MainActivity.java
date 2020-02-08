@@ -1,5 +1,6 @@
 package com.giri.test1;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +15,13 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button image, call, sms, email, camera, map,video;
@@ -110,11 +118,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         if(v == video){
-
+/*
         Intent intent = new Intent();
         intent.setType("video/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent,2);
+        startActivityForResult(intent,2);*/
+        Intent intent = new Intent(MainActivity.this,VideoActivity.class);
+        startActivity(intent);
 
         }
 
@@ -123,7 +133,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
     }
-/*
+
+   /* @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+    }*/
+    /*
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

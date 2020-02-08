@@ -68,7 +68,15 @@ public class CallActivity extends AppCompatActivity {
                 }
             }
         });
+            cancel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                    Intent intent = new Intent(CallActivity.this,MainActivity.class);
+                    startActivity(intent);
 
+                }
+            });
         dialog.show();
 
     }
