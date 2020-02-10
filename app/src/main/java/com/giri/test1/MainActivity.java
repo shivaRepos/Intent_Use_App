@@ -79,10 +79,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }*/
             startActivity(intent);
             }
-        if(v == image){
+        if(v == image){/*
             Intent intent = new Intent();
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
+            startActivity(intent);*/
+            Intent intent = new Intent(MainActivity.this,ImageActivity.class);
             startActivity(intent);
         }
         if(v == sms){

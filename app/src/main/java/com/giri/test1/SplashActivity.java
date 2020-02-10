@@ -49,10 +49,11 @@ public class SplashActivity extends AppCompatActivity {
             // Permission is not granted
                 Log.e(TAG,"Permission not granted");
 
-            for(int i=0;i<6;i++) {
+            for(int i=0;i<6;i++)
+            {
                 // Should we show an explanation?
                 if (ActivityCompat.shouldShowRequestPermissionRationale(SplashActivity.this,
-                        s[i])) {
+                        s[i] )) {
                     // Show an explanation to the user *asynchronously* -- don't block
                     // this thread waiting for the user's response! After the user
                     // sees the explanation, try again to request the permission.
