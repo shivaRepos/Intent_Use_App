@@ -118,7 +118,8 @@ public class SplashActivity extends AppCompatActivity {
                         finish();
                     }
                 }
-                else{
+                else
+                    {
 
                     super.onRequestPermissionsResult(requestCode, permissions, grantResults);
                 }

@@ -56,10 +56,10 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void updateUI(GoogleSignInAccount account) {
-        if(account != null){
-            startActivity(new Intent(AuthActivity.this,MainActivity.class));
+            if(account != null){
+                startActivity(new Intent(AuthActivity.this,MainActivity.class));
 
-        }
+            }
 
     }
 

@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
             startActivity(intent);*/
-            Intent intent = new Intent(MainActivity.this,ImageActivity.class);
+            Intent intent = new Intent(MainActivity.this,PermissionActivity.class);
             startActivity(intent);
         }
         if(v == sms){
